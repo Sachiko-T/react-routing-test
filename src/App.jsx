@@ -12,6 +12,7 @@ export default function App() {
         <br />
         <Link to="/page2">Page2</Link>
         <br />
+        <Link to="/page3">Page3</Link>
       </div>
 
       <Router />

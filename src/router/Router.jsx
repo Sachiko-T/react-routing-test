@@ -2,6 +2,7 @@ import { Switch, Route } from "react-router-dom";
 import { Home } from "../Home";
 import { Page1Routes } from "./Page1Routes";
 import { Page2Routes } from "./Page2Routes";
+import { Page3Routes } from "./Page3Routes";
 
 export const Router = () => {
   return (
@@ -33,6 +34,23 @@ export const Router = () => {
         render={({ match: { url } }) => (
           <Switch>
             {Page2Routes.map((route) => (
+              <Route
+                key={route.path}
+                exact={route.exact}
+                path={`${url}${route.path}`}
+              >
+                {route.children}
+              </Route>
+            ))}
+          </Switch>
+        )}
+      ></Route>
+      {/* page3 */}
+      <Route
+        path="/page3"
+        render={({ match: { url } }) => (
+          <Switch>
+            {Page3Routes.map((route) => (
               <Route
                 key={route.path}
                 exact={route.exact}
